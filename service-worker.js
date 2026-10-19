@@ -1,10 +1,12 @@
 /* PWA offline: aumentar a versão quando atualizar imagens ou conteúdo. */
-const CACHE_VERSION = 'favela-showcase-v2.0.0';
-const SLIDE_ASSETS = Array.from({ length: 17 }, (_, index) =>
-  `./assets/slides/tela-${String(index + 1).padStart(2, '0')}.webp`
-);
+const CACHE_VERSION = 'favela-showcase-v2.1.0';
+const REVISED_SLIDES = new Set([2, 10, 11, 12, 13, 14, 15, 16, 17]);
+const SLIDE_ASSETS = Array.from({ length: 17 }, (_, index) => {
+  const number = index + 1;
+  return `./assets/slides/tela-${String(number).padStart(2, '0')}${REVISED_SLIDES.has(number) ? '-vina' : ''}.webp`;
+});
 const CORE_ASSETS = [
-  './', './index.html', './styles.css', './app.js', './slides.js',
+  './', './index.html', './styles.css?v=2.1.0', './app.js?v=2.1.0', './slides.js?v=2.1.0',
   './manifest.webmanifest', './favicon.ico',
   './assets/icons/icon-192.png', './assets/icons/icon-512.png',
   ...SLIDE_ASSETS

@@ -1,3 +1,11 @@
+# Atualização v2.1 • correção de tipografia e atualização offline
+
+- Reexportadas diretamente de um PDF com Vina Sans incorporada: **tela 02 (menu “CONHEÇA OS PROJETOS”)** e **telas 10 a 17** (inclui a capa Expressão Favela sem títulos de Vina Sans).
+- Assets ganharam nomes novos `tela-XX-vina.webp` para evitar reutilização de arquivos antigos pelo navegador ou pela CDN.
+- O cache do PWA foi atualizado para `favela-showcase-v2.1.0` e os scripts têm URLs versionadas, sem alterar navegação ou animações.
+- Caso o iPad continue mostrando telas antigas, abra o site com Wi-Fi ligado, feche a apresentação e abra novamente para o novo Service Worker concluir a atualização. Se não atualizar, remova e reinstale o atalho da Tela de Início.
+- A fonte está rasterizada nas telas; nenhum arquivo de fonte é distribuído.
+
 # Favela • Interactive Showcase v2
 
 > **Atualizações v2 (19/10/2026)**
