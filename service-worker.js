@@ -1,5 +1,5 @@
 /* PWA offline: aumentar a versão quando atualizar imagens ou conteúdo. */
-const CACHE_VERSION = 'favela-showcase-v1.0.0';
+const CACHE_VERSION = 'favela-showcase-v2.0.0';
 const SLIDE_ASSETS = Array.from({ length: 17 }, (_, index) =>
   `./assets/slides/tela-${String(index + 1).padStart(2, '0')}.webp`
 );

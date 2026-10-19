@@ -1,3 +1,12 @@
+# Favela • Interactive Showcase v2
+
+> **Atualizações v2 (19/10/2026)**
+> - 17 telas renderizadas novamente a partir do PowerPoint original, usando a fonte **Vina Sans** incorporada ao arquivo.
+> - Nova transição leve (fade + movimento de 18px, ~280 ms); mudanças de projeto com fade + zoom discreto.
+> - Feedback de toque nos botões e suporte a `prefers-reduced-motion`.
+> - Cache offline renovado (`favela-showcase-v2.0.0`), sem carregar fontes ou scripts externos.
+> - Os textos e a tipografia fazem parte das imagens exportadas. Não é necessário distribuir um arquivo de fonte no site.
+
 # Favela • Interactive Showcase
 
 Versão HTML interativa da apresentação `[int] YouTube Fair 2026 - FAVELA _ Interactive Showcase.pptx`, adaptada para **iPad de 10ª geração em orientação horizontal**. Nenhuma dependência de frameworks, bibliotecas externas ou API.
