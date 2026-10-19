@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#151515">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Favela Gaming • Interactive Showcase. Explore Favela Gaming, Favela Fut e Expressão Favela em uma experiência interativa no iPad.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Favela Showcase">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" as="image" href="assets/slides/tela-01.webp" type="image/webp">
+  <link rel="stylesheet" href="styles.css">
+  <title>Favela • Interactive Showcase</title>
+</head>
+<body>
+  <main class="viewer" aria-label="Apresentação interativa Favela Gaming">
+    <section id="stage" class="stage" aria-label="Tela da apresentação">
+      <img
+        id="slideImage"
+        class="slide-image"
+        src="assets/slides/tela-01.webp"
+        alt="Abertura. Toque na tela e conheça o projeto Favela."
+        draggable="false"
+        width="2361"
+        height="1641"
+        fetchpriority="high"
+      >
+      <div id="hotspots" class="hotspots" aria-label="Áreas interativas"></div>
+    </section>
+    <div id="accessibilityTranscript" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <output id="connectionStatus" class="sr-only" aria-live="polite"></output>
+    <div class="rotate-hint" aria-hidden="true">
+      <div class="rotate-graphic" aria-hidden="true">↻</div>
+      <p>Gire o iPad para o modo paisagem</p>
+      <small>Esta experiência foi criada para a tela horizontal.</small>
+    </div>
+  </main>
+  <noscript>Ative o JavaScript para utilizar os botões desta apresentação.</noscript>
+  <script src="slides.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

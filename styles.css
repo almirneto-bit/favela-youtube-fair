@@ -1,0 +1,120 @@
+:root {
+  --screen-ratio: 1.4390243902;
+  --brand-orange: #f47a22;
+  --outer-background: #111;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; padding: 0; margin: 0; }
+html { background: var(--outer-background); overscroll-behavior: none; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+.viewer {
+  position: fixed;
+  inset: 0;
+  width: 100%; height: 100%;
+  height: 100dvh;
+  background: var(--outer-background);
+  overflow: hidden;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.stage {
+  position: absolute;
+  width: min(100vw, 143.902439dvh);
+  height: min(100dvh, 69.491525dvw);
+  max-width: 100vw;
+  max-height: 100dvh;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #faf7f0;
+  overflow: hidden;
+  isolation: isolate;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: pan-y;
+}
+.slide-image {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  opacity: 1;
+  transition: opacity 130ms ease;
+}
+.slide-image.is-changing { opacity: .65; }
+.hotspots {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.hotspot {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: min(9px, 0.6vw);
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+.hotspot--screen {
+  border: 0;
+  border-radius: 0;
+}
+.hotspot:focus-visible {
+  outline: 3px solid #ff7418;
+  outline-offset: -4px;
+  background: rgba(244, 122, 34, .12);
+}
+.hotspot:active:not(.hotspot--screen) {
+  background: rgba(244, 122, 34, .15);
+}
+@media (hover:hover) and (pointer:fine) {
+  .hotspot:hover:not(.hotspot--screen) {
+    background: rgba(244, 122, 34, .075);
+    border-color: rgba(244, 122, 34, .2);
+  }
+}
+.rotate-hint {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #f9f6ef;
+  color: #161616;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  padding: 2rem;
+}
+.rotate-hint .rotate-graphic {
+  font-size: clamp(4rem, 14vw, 8rem);
+  color: var(--brand-orange);
+  line-height: 1;
+}
+.rotate-hint p { font-size: clamp(1.4rem, 5vw, 2.25rem); font-weight: 800; margin: 0; }
+.rotate-hint small { font-size: .94rem; max-width: 22rem; }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+@media (orientation:portrait) and (max-width:1024px) {
+  .rotate-hint { display: flex; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .slide-image { transition: none; }
+}
