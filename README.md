@@ -15,7 +15,7 @@ Versão HTML interativa da apresentação `[int] YouTube Fair 2026 - FAVELA _ In
 
 1. Descompacte o arquivo `.zip` enviado.
 2. Acesse https://app.netlify.com/drop ou, no painel Netlify, **Add new project → Deploy manually**.
-3. Arraste a **pasta descompactada `favela_interactive_netlify`**, que contém o `index.html`, para a área de publicação.
+3. Arraste para a Netlify a **pasta onde está o `index.html`**, depois de descompactar o ZIP.
 4. Aguarde a URL HTTPS de publicação.
 5. Abra a URL em um iPad com internet, espere **todas as imagens** carregarem no primeiro acesso e faça o teste desligando o Wi-Fi.
 
@@ -56,11 +56,11 @@ Versão HTML interativa da apresentação `[int] YouTube Fair 2026 - FAVELA _ In
 - **Trocar imagem de uma tela:** substitua `assets/slides/tela-XX.webp`, preservando o nome e, preferencialmente, a resolução e proporção.
 - **Mudar um botão clicável:** edite, no `slides.js`, a propriedade `actions` da página. `x`, `y`, `w`, `h` são percentuais de posição e tamanho relativos à tela. `go` usa índices começando em **0** (0 = abertura, 1 = menu, 2 = Favela Gaming etc.).
 - **Tempo de inatividade:** altere `AUTO_RESET_SECONDS = 180` em `app.js`; use `0` para desativar.
-- **Após editar para uma nova publicação:** atualize o valor `CACHE_VERSION` em `service-worker.js` (`v1.0.1`, `v1.0.2` etc.) para solicitar nova cópia offline.
+- **Após editar para uma nova publicação:** atualize o valor `CACHE_VERSION` em `service-worker.js` (`favela-showcase-v2.0.1`, `favela-showcase-v2.0.2` etc.) para solicitar nova cópia offline.
 
 ## Limitações importantes
 
 - Para preservar a composição original, as telas são **imagens WebP** sobrepostas por áreas HTML clicáveis. Textos, fotos e elementos gráficos internos **não são objetos HTML separados** e não podem ser editados individualmente no navegador.
-- O arquivo PPTX original incorpora algumas fontes não disponíveis no renderizador usado nesta conversão. Foi aplicada **substituição tipográfica para a versão visual**, evitando que títulos invadissem os textos e preservando as fotos, cores e a hierarquia geral. Portanto, a aparência das letras pode diferir do Google Slides original.
+- Na versão 2, os slides foram renderizados com a **Vina Sans incorporada à apresentação original**, mantendo sua aparência visual. A fonte faz parte dos pixels das imagens WebP, não do CSS editável do site.
 - Não há necessidade de internet para as ações de navegação e apresentação **depois que o cache PWA estiver completamente instalado**. A primeira instalação, atualizações e qualquer mídia externa adicionada posteriormente exigem cuidados adicionais.
 - Recomendamos usar **Acesso Guiado** nas configurações do iPad para evitar que visitantes saiam acidentalmente do app.
